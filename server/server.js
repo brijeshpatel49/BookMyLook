@@ -13,7 +13,7 @@ const { Server } = require("socket.io");
 const { handleSocketConnections } = require("./socket/socketHandler");
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://book-my-look.vercel.app/"],
+  origin: ["http://localhost:5173", "https://book-my-look.vercel.app"],
   methods: "GET, POST, PUT, DELETE, PATCH",
   credentials: true,
 };
