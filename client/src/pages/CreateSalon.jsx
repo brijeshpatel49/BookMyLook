@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import {
   BuildingStorefrontIcon,
   MapPinIcon,

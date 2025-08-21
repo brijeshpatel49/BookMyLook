@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../store/auth";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { Loading } from "../components/Loading";
 import { motion } from "framer-motion"; // Added motion import
 import {

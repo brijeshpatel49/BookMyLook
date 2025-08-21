@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion"; // Added import
 import { useAuth } from "../store/auth";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { OTPVerify } from "../components/OTPVerify";
 import {
   UserIcon,

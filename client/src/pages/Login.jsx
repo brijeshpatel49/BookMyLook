@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // Added import
+import { motion } from "framer-motion";
 import { useAuth } from "../store/auth";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import {
   EnvelopeIcon,
   LockClosedIcon,
@@ -37,7 +37,7 @@ export const Login = () => {
 
       const res_data = await response.json();
       if (response.ok) {
-        toast.success("Login Successful");
+        toast.success(`Welcome Back`);
         storeTokenInLS(res_data.token);
         setUser({ email: "", password: "" });
         navigate(`/dashboard`);

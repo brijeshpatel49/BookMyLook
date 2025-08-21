@@ -3,6 +3,7 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import toast from "react-hot-toast";
 
 const getMenuItems = (role) => {
   if (role === "user") {
@@ -38,6 +39,12 @@ export const Navbar = ({ children }) => {
   const isProfileActive = location.pathname === "/profile";
   const isRegisterActive = location.pathname.startsWith("/register");
 
+  const handleLogout = () => {
+    LogoutUser();
+    toast("Logged Out Successfully");
+
+    navigate("/");
+  };
   const handleProfileClick = () => {
     navigate("/profile");
   };
@@ -146,7 +153,7 @@ export const Navbar = ({ children }) => {
 
                     {/* Simple Logout Button with zoom effect */}
                     <button
-                      onClick={LogoutUser}
+                      onClick={handleLogout}
                       className="p-3 text-red-400 hover:text-red-300 rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer"
                       title="Logout"
                     >
@@ -355,9 +362,9 @@ export const Navbar = ({ children }) => {
                 <button
                   onClick={() => {
                     setSidebarOpen(false);
-                    LogoutUser();
+                    handleLogout();
                   }}
-                  className="relative w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-300 group"
+                  className="relative w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-300 group cursor-pointer"
                 >
                   <div className="flex items-center relative">
                     <ArrowRightStartOnRectangleIcon className="h-5 w-5 mr-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -413,13 +420,11 @@ export const Navbar = ({ children }) => {
               </NavLink>
               <NavLink
                 to="/register/user"
-                className={
-                  `block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    isRegisterActive
-                      ? "text-purple-300 bg-purple-500/20 shadow-lg shadow-purple-500/30 border border-purple-500/30"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                  }`
-                }
+                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isRegisterActive
+                    ? "text-purple-300 bg-purple-500/20 shadow-lg shadow-purple-500/30 border border-purple-500/30"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                }`}
                 onClick={() => setSidebarOpen(false)}
               >
                 Register

@@ -2,7 +2,7 @@
 import { useAuth } from "../store/auth";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { Loading } from "../components/Loading";
 import { ShareModal } from "../components/ShareModal";
 import { io } from "socket.io-client";

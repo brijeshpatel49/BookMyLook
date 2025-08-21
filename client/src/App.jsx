@@ -20,7 +20,6 @@ import { Favorites } from "./pages/Favorites";
 import { AdminLayout } from "./pages/Layout/AdminLayout";
 import { AdminUsers } from "./pages/AdminUsers";
 import { AdminSalons } from "./pages/AdminSalons";
-import { Logout } from "./components/Logout";
 import { AdminHome } from "./pages/AdminHome";
 import { ForgetPass } from "./pages/ForgotPass";
 
@@ -32,7 +31,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register/:role" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
         <Route path="/forgot-password" element={<ForgetPass />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/salons" element={<Salons />} />
